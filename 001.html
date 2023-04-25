@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+    <!-- 2. 定义容器，设置ID属性，设置容器的宽度和高度 -->
+    <div id="chart1" style="width: 800px; height: 300px;"></div>
+    <!-- 1. 引入 echarts.js -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.1/echarts.min.js"></script>
+    <script type="text/javascript">
+        // 3. 初始化图表
+        let echart1Obj = document.getElementById('chart1')
+        let chart1 = echarts.init(echart1Obj)
+        // 4. 配置图表
+        let option1 = {
+            series: [
+                {
+                    type: 'tree',
+                    data: [
+                        {
+                            name: "会员代表大会",
+                            children: [
+                                {
+                                    name: "理事会",
+                                    children: [
+                                        {
+                                            name:"副会长"
+                                        },
+
+                                        {
+                                            name:"常务副会长",
+                                            children: [
+                                                {
+                                                    name: "顾问团(专家组)"
+                                                },
+                                                {
+                                                    name: "秘书长及秘书处",
+                                                    children: [
+                                                        {
+                                                            name: "部门1"
+                                                        },
+                                                        {
+                                                            name: "部门2"
+                                                        },
+                                                        {
+                                                            name: "部门3"
+                                                        },
+                                                        {
+                                                            name: "部门4"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name:"会长(法人代表)"
+                                        },
+                                        {
+                                            name:"名誉会长"
+                                        },
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    // edgeShape: "curve",
+                    edgeShape: "polyline",
+                }
+            ]
+        };
+        // 5. 渲染图表
+        chart1.setOption(option1)
+    </script>
+</body>
+
+</html>
